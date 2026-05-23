@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elegant Calculator and Timer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="hero">
+      <h1>Calculator and Live Timer</h1>
+      <p>
+        Live digital clock, a countdown timer and a responsive calculator.
+      </p>
+    </div>
+
+    <div class="container">
+      <!-- Timer Section -->
+      <section class="card">
+        <h2 class="section-title"><span>⏰</span> Live Time and Timer</h2>
+
+        <div class="time-panel">
+          <div id="liveClock" class="live-clock">00:00:00</div>
+          <div class="clock-label">Current Time</div>
+        </div>
+
+        <div class="time-panel">
+          <div id="timerDisplay" class="timer-display">00:00</div>
+          <div class="timer-label">Countdown Timer</div>
+        </div>
+
+        <div class="set-time">
+          <input
+            type="number"
+            id="minutesInput"
+            placeholder="Minutes"
+            min="0"
+          />
+          <input
+            type="number"
+            id="secondsInput"
+            placeholder="Seconds"
+            min="0"
+            max="59"
+          />
+          <button class="set-btn full-width" onclick="setTimer()">
+            Set Timer
+          </button>
+        </div>
+
+        <div class="timer-controls">
+          <button class="start" onclick="startTimer()">Start</button>
+          <button class="pause" onclick="pauseTimer()">Pause</button>
+          <button class="reset" onclick="resetTimer()">Reset</button>
+        </div>
+      </section>
+
+      <!-- Calculator Section -->
+      <section class="card">
+        <h2 class="section-title"><span>🧮</span> Calculator</h2>
+
+        <input
+          type="text"
+          id="calcDisplay"
+          class="display"
+          disabled
+          placeholder="0"
+        />
+
+        <div class="buttons">
+          <button class="btn-clear" onclick="clearDisplay()">C</button>
+          <button class="btn-operator" onclick="appendValue('/')">/</button>
+          <button class="btn-operator" onclick="appendValue('*')">×</button>
+          <button class="btn-operator" onclick="deleteLast()">DEL</button>
+
+          <button class="btn-number" onclick="appendValue('7')">7</button>
+          <button class="btn-number" onclick="appendValue('8')">8</button>
+          <button class="btn-number" onclick="appendValue('9')">9</button>
+          <button class="btn-operator" onclick="appendValue('-')">−</button>
+
+          <button class="btn-number" onclick="appendValue('4')">4</button>
+          <button class="btn-number" onclick="appendValue('5')">5</button>
+          <button class="btn-number" onclick="appendValue('6')">6</button>
+          <button class="btn-operator" onclick="appendValue('+')">+</button>
+
+          <button class="btn-number" onclick="appendValue('1')">1</button>
+          <button class="btn-number" onclick="appendValue('2')">2</button>
+          <button class="btn-number" onclick="appendValue('3')">3</button>
+          <button class="btn-number" onclick="appendValue('.')">.</button>
+
+          <button class="btn-number" onclick="appendValue('0')">0</button>
+          <button class="btn-equal" onclick="calculateResult()">=</button>
+        </div>
+
+        <p class="footer-note">
+          Keyboard: numbers and operators to type, Enter for result, Backspace
+          to delete, Esc to clear.
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
